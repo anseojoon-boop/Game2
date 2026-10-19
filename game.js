@@ -7,7 +7,9 @@
   const ui = {
     scene: $("scene"), background: $("background"), portrait: $("portrait"),
     speaker: $("speaker"), line: $("line"), choices: $("choices"),
-    affection: $("affection"), next: $("next-button"), status: $("status")
+    affection: $("affection"), partnerLabel: $("partner-label"),
+    affectionValue: $("affection-value"), positive: $("affection-positive"),
+    negative: $("affection-negative"), next: $("next-button"), status: $("status")
   };
 
   document.title = data.title;
@@ -54,7 +56,16 @@
     ui.speaker.style.color = node.speaker === "partner" ? date.color : "#f6dfaa";
     ui.line.textContent = node.text;
     ui.affection.hidden = !date;
-    ui.affection.textContent = date ? `${date.label} 상대 · ${date.name} ♥ ${state.affection}` : "";
+    if (date) {
+      const { min, max } = data.affectionGauge;
+      const displayed = Math.max(min, Math.min(max, state.affection));
+      ui.partnerLabel.textContent = `${date.label} 상대 · ${date.name}`;
+      ui.affectionValue.textContent = state.affection > 0 ? `+${state.affection}` : String(state.affection);
+      ui.positive.style.width = `${Math.max(0, displayed) / max * 50}%`;
+      ui.negative.style.width = `${Math.max(0, -displayed) / -min * 50}%`;
+      ui.affection.setAttribute("aria-valuenow", String(displayed));
+      ui.affection.setAttribute("aria-valuetext", `${date.name} 호감도 ${state.affection}`);
+    }
     ui.choices.replaceChildren();
     ui.choices.className = "choices " + (node.type === "gender" ? "gender-options" : "letter-options");
 

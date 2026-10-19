@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 24" aria-label="호감도 게이지 테두리">
+  <rect x="1" y="1" width="238" height="22" rx="11" fill="none" stroke="#f9e9df" stroke-opacity=".8" stroke-width="2"/>
+  <path d="M31 5v14m30-14v14m30-14v14m58-14v14m30-14v14m30-14v14" stroke="#f9e9df" stroke-opacity=".25" stroke-width="1"/>
+  <path d="M120 2v20" stroke="#f9e9df" stroke-opacity=".9" stroke-width="2"/>
+</svg>
