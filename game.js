@@ -58,6 +58,7 @@
     ui.speaker.textContent = node.speaker === "partner" ? date.name : "이야기";
     ui.speaker.style.color = node.speaker === "partner" ? date.color : "#f6dfaa";
     ui.line.textContent = node.text;
+    ui.dialogue.classList.toggle("choice-mode", node.type === "choice");
     ui.affection.hidden = !date;
     if (date) {
       const { min, max } = data.affectionGauge;
