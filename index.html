@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>옥상에서 만난 봄</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="story.js"></script>
+    <script defer src="game.js"></script>
+  </head>
+  <body>
+    <main class="game" id="game">
+      <div class="scene" id="scene" aria-label="게임 장면">
+        <img class="background" id="background" alt="">
+        <div class="scene-shade"></div>
+        <img class="portrait" id="portrait" alt="">
+        <div class="topbar">
+          <div class="brand"><span class="brand-mark">✦</span> 옥상에서 만난 봄 <small>visual novel demo</small></div>
+          <button id="gallery-button" type="button">추억 보기</button>
+        </div>
+        <div class="hud" id="affection" aria-label="호감도"></div>
+        <section class="dialogue" aria-live="polite">
+          <div class="speaker" id="speaker"></div>
+          <p class="line" id="line"></p>
+          <div class="choices" id="choices"></div>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+          <div class="dialogue-footer">
+            <div class="controls">
+              <button id="save-button" type="button">저장</button>
+              <button id="load-button" type="button">불러오기</button>
+              <button id="restart-button" type="button">처음부터</button>
+            </div>
+            <button class="next" id="next-button" type="button">다음 <span aria-hidden="true">›</span></button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <dialog id="gallery">
+      <div class="modal-heading">
+        <div><span class="eyebrow">COLLECTION</span><h2>추억 보관함</h2></div>
+        <button id="close-gallery" type="button" aria-label="추억 보관함 닫기">×</button>
+      </div>
+      <p class="modal-description">이야기를 진행하며 만난 장면이 이곳에 남아요.</p>
+      <div class="gallery-grid" id="gallery-grid"></div>
+    </dialog>
+  </body>
+</html>
