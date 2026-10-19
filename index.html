@@ -29,7 +29,7 @@
             <div class="gauge-labels" aria-hidden="true"><span>−10</span><span>0</span><span>+10</span></div>
           </div>
         </div>
-        <section class="dialogue" aria-live="polite">
+        <section class="dialogue" id="dialogue" aria-live="polite" hidden>
           <div class="speaker" id="speaker"></div>
           <p class="line" id="line"></p>
           <div class="choices" id="choices"></div>
@@ -41,6 +41,19 @@
               <button id="restart-button" type="button">처음부터</button>
             </div>
             <button class="next" id="next-button" type="button">다음 <span aria-hidden="true">›</span></button>
+          </div>
+        </section>
+        <section class="title-screen" id="title-screen" aria-label="시작 화면">
+          <img class="title-background" id="title-background" alt="">
+          <div class="title-content">
+            <div class="title-emblem" aria-hidden="true">✦</div>
+            <h1 class="title-logo">인관심 7조 과제</h1>
+            <p class="title-subtitle">첫 만남 · 카페</p>
+            <div class="title-menu">
+              <button id="title-start-button" type="button">새로 시작</button>
+              <button id="title-load-button" type="button">로드</button>
+            </div>
+            <p class="title-status" id="title-status" role="status" aria-live="polite"></p>
           </div>
         </section>
       </div>

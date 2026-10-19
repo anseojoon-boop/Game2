@@ -6,6 +6,7 @@ window.GAME_DATA = {
   affectionGauge: { min: -10, max: 10 },
   start: "choose_gender",
   assets: {
+    title: "assets/title-cafe.png",
     backgrounds: { cafe: "assets/concepts/cafe-day.png" },
     portraits: {
       female: "assets/date-female.svg",

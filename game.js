@@ -6,6 +6,9 @@
   const $ = (id) => document.getElementById(id);
   const ui = {
     scene: $("scene"), background: $("background"), portrait: $("portrait"),
+    dialogue: $("dialogue"),
+    title: $("title-screen"), titleBackground: $("title-background"),
+    titleStatus: $("title-status"),
     speaker: $("speaker"), line: $("line"), choices: $("choices"),
     affection: $("affection"), partnerLabel: $("partner-label"),
     affectionValue: $("affection-value"), positive: $("affection-positive"),
@@ -123,7 +126,7 @@
     }
   }
 
-  function load() {
+  function load(fromTitle = false) {
     let saved;
     try {
       saved = JSON.parse(localStorage.getItem(saveKey));
@@ -137,28 +140,42 @@
       (previous.node === data.start || previous.gender !== null) &&
       Number.isFinite(previous.affection);
     if (!valid) {
-      notify("불러올 수 있는 저장 기록이 없어요.");
+      if (fromTitle) ui.titleStatus.textContent = "불러올 수 있는 저장 기록이 없어요.";
+      else notify("불러올 수 있는 저장 기록이 없어요.");
       return;
     }
     state = { node: previous.node, gender: previous.gender, affection: previous.affection };
+    ui.title.hidden = true;
+    ui.dialogue.hidden = false;
     render();
     notify("저장한 장면을 불러왔어요.");
   }
 
+  $("title-start-button").addEventListener("click", () => {
+    state = newState();
+    ui.title.hidden = true;
+    ui.dialogue.hidden = false;
+    enter(state.node);
+    ui.choices.querySelector("button")?.focus();
+  });
+  $("title-load-button").addEventListener("click", () => load(true));
   ui.next.addEventListener("click", advance);
   $("save-button").addEventListener("click", save);
-  $("load-button").addEventListener("click", load);
+  $("load-button").addEventListener("click", () => load());
   $("restart-button").addEventListener("click", () => {
     state = newState();
     enter(state.node);
     notify("처음부터 다시 시작했어요.");
   });
   ui.scene.addEventListener("click", (event) => {
+    if (!ui.title.hidden) return;
     if (event.target.closest("button, .dialogue, .topbar, .hud")) return;
     advance();
   });
   document.addEventListener("keydown", (event) => {
+    if (!ui.title.hidden) return;
     if (event.key === "Enter" && event.target.tagName !== "BUTTON") advance();
   });
+  showImage(ui.titleBackground, data.assets.title, "");
   enter(state.node);
 })();

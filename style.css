@@ -27,6 +27,7 @@ button:focus-visible { outline: 3px solid #ffe3a9; outline-offset: 3px; }
 .gauge-frame { position: absolute; inset: 0; width: 100%; height: 100%; }
 .gauge-labels { display: flex; justify-content: space-between; margin-top: 2px; color: #f6e4dfb8; font-size: 9px; line-height: 1; }
 .dialogue { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); width: min(92%, 960px); min-height: 205px; padding: 23px 28px 18px; border: 1px solid #ffffff7a; border-radius: 18px; background: #241d26bd; box-shadow: 0 12px 45px #0c0d20a6; backdrop-filter: blur(2px); }
+.dialogue[hidden] { display: none; }
 .speaker { font-size: 15px; font-weight: 700; }
 .line { margin: 12px 0 14px; min-height: 45px; font-size: clamp(16px, 1.6vw, 21px); line-height: 1.6; word-break: keep-all; }
 .choices { display: flex; flex-direction: column; gap: 8px; margin: 3px 0 14px; }
@@ -42,6 +43,18 @@ button:focus-visible { outline: 3px solid #ffe3a9; outline-offset: 3px; }
 .next span { margin-left: 5px; font-size: 24px; vertical-align: -2px; }
 .status { margin: 0 0 10px; color: #ffdfb7; font-size: 12px; }
 .status:empty { display: none; }
+.title-screen { position: absolute; inset: 0; z-index: 5; display: flex; justify-content: center; align-items: flex-start; padding: clamp(70px, 12vh, 120px) 20px 24px; text-align: center; overflow: hidden; background: #e9b895; }
+.title-screen[hidden] { display: none; }
+.title-background { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.title-screen::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, #fff0db3d 0%, #fff2d533 50%, #442b302e 100%); pointer-events: none; }
+.title-content { position: relative; z-index: 1; width: min(100%, 600px); color: #53353b; text-shadow: 0 2px 12px #fff2d6c9; }
+.title-emblem { color: #ad6a6b; font-size: 28px; line-height: 1; }
+.title-logo { margin: 12px 0 4px; font-size: clamp(36px, 5vw, 64px); font-weight: 800; line-height: 1.2; letter-spacing: -.07em; white-space: nowrap; }
+.title-subtitle { margin: 0; font-size: clamp(13px, 1.4vw, 18px); font-weight: 700; letter-spacing: .24em; }
+.title-menu { display: grid; gap: 12px; width: min(100%, 250px); margin: clamp(46px, 7vh, 70px) auto 0; }
+.title-menu button { min-height: 53px; border: 1px solid #ffead4; border-radius: 13px; background: #563940e8; color: #fff8ef; box-shadow: 0 7px 20px #5732364d; font-size: 17px; font-weight: 700; }
+.title-menu button:hover { background: #80515c; }
+.title-status { min-height: 1.5em; margin: 14px 0 0; font-size: 13px; font-weight: 700; }
 @media (max-width: 650px) {
   .scene { height: 100dvh; min-height: 580px; }
   .background { object-position: 25% center; }
@@ -54,4 +67,7 @@ button:focus-visible { outline: 3px solid #ffe3a9; outline-offset: 3px; }
   .portrait { height: 52%; max-width: 85%; bottom: 184px; }
   .dialogue { bottom: 12px; width: calc(100% - 24px); min-height: 188px; padding: 18px; }
   .line { font-size: 16px; }
+  .title-background { object-position: center; }
+  .title-logo { font-size: clamp(30px, 8vw, 42px); }
+  .title-menu { width: min(100%, 225px); }
 }
