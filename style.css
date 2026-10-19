@@ -35,6 +35,7 @@ button:focus-visible { outline: 3px solid #ffe3a9; outline-offset: 3px; }
 .status:empty { display: none; }
 @media (max-width: 650px) {
   .scene { height: 100dvh; min-height: 580px; }
+  .background { object-position: 25% center; }
   .topbar { padding: 19px 17px; }
   .brand { font-size: 14px; }
   .brand small { font-size: 8px; }

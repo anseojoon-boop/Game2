@@ -5,7 +5,7 @@ window.GAME_DATA = {
   title: "인관심 7조 과제",
   start: "choose_gender",
   assets: {
-    backgrounds: { cafe: "assets/cafe.svg" },
+    backgrounds: { cafe: "assets/concepts/cafe-day.png" },
     portraits: {
       female: "assets/date-female.svg",
       male: "assets/date-male.svg"
