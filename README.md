@@ -16,3 +16,9 @@
 **저장**은 현재 위치와 호감도를 브라우저에 기록합니다. **불러오기**는 기록한 장면으로 돌아갑니다. 추억 해금은 별도로 남아서 **처음부터**를 눌러도 유지됩니다. 브라우저 저장 데이터를 삭제하거나 다른 기기·브라우저에서 열면 기록을 공유할 수 없습니다. 이야기 구조를 크게 바꿀 때는 `story.js`의 `version`을 올리면 이전 저장 기록 대신 새 게임을 시작할 수 있습니다.
 
 파일이 열리지 않는 브라우저에서는 이 폴더에서 `python3 -m http.server 8000`을 실행한 뒤 `http://localhost:8000`으로 접속하세요.
+
+## 웹에서 열기
+
+임시 미리보기 주소: https://raw.githack.com/anseojoon-boop/Game2/main/index.html
+
+고정된 GitHub Pages 주소를 만들려면 GitHub 저장소의 **Settings → Pages**에서 **Deploy from a branch**, **main**, **/(root)**를 선택하고 저장하세요. 게시가 끝나면 https://anseojoon-boop.github.io/Game2/ 에서 열 수 있습니다. 이 설정은 저장소 소유자가 한 번만 하면 됩니다.
