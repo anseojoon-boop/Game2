@@ -163,10 +163,11 @@
   ui.next.addEventListener("click", advance);
   $("save-button").addEventListener("click", save);
   $("load-button").addEventListener("click", () => load());
-  $("restart-button").addEventListener("click", () => {
-    state = newState();
-    enter(state.node);
-    notify("처음부터 다시 시작했어요.");
+  $("menu-button").addEventListener("click", () => {
+    ui.titleStatus.textContent = "";
+    ui.dialogue.hidden = true;
+    ui.title.hidden = false;
+    $("title-start-button").focus();
   });
   ui.scene.addEventListener("click", (event) => {
     if (!ui.title.hidden) return;

@@ -38,27 +38,37 @@ window.GAME_DATA = {
     greeting: {
       type: "line", background: "cafe", portrait: "partner", speaker: "partner",
       text: "예시 대화 2",
-      next: "first_question"
-    },
-    first_question: {
-      type: "line", background: "cafe", portrait: "partner", speaker: "partner",
-      text: "예시 대화 3",
       next: "first_choice"
     },
     first_choice: {
       type: "choice", background: "cafe", portrait: "partner", speaker: null,
       text: "",
       options: [
-        { label: "A", affection: 2, next: "second_talk" },
-        { label: "B", affection: 1, next: "second_talk" },
-        { label: "C", affection: -1, next: "second_talk" },
-        { label: "D", affection: -2, next: "second_talk" }
+        { label: "A", affection: 2, next: "first_question" },
+        { label: "B", affection: 1, next: "first_question" },
+        { label: "C", affection: -1, next: "first_question" },
+        { label: "D", affection: -2, next: "first_question" }
       ]
+    },
+    first_question: {
+      type: "line", background: "cafe", portrait: "partner", speaker: "partner",
+      text: "예시 대화 3",
+      next: "second_talk"
     },
     second_talk: {
       type: "line", background: "cafe", portrait: "partner", speaker: "partner",
       text: "예시 대화 4",
-      next: "second_question"
+      next: "second_choice"
+    },
+    second_choice: {
+      type: "choice", background: "cafe", portrait: "partner", speaker: null,
+      text: "",
+      options: [
+        { label: "A", affection: 2, next: "second_question" },
+        { label: "B", affection: 1, next: "second_question" },
+        { label: "C", affection: -1, next: "second_question" },
+        { label: "D", affection: -2, next: "second_question" }
+      ]
     },
     second_question: {
       type: "line", background: "cafe", portrait: "partner", speaker: "partner",
@@ -68,14 +78,89 @@ window.GAME_DATA = {
     third_talk: {
       type: "line", background: "cafe", portrait: "partner", speaker: "partner",
       text: "예시 대화 6",
-      next: "fourth_talk"
+      next: "third_choice"
+    },
+    third_choice: {
+      type: "choice", background: "cafe", portrait: "partner", speaker: null,
+      text: "",
+      options: [
+        { label: "A", affection: 2, next: "fourth_talk" },
+        { label: "B", affection: 1, next: "fourth_talk" },
+        { label: "C", affection: -1, next: "fourth_talk" },
+        { label: "D", affection: -2, next: "fourth_talk" }
+      ]
     },
     fourth_talk: {
       type: "line", background: "cafe", portrait: "partner", speaker: "partner",
       text: "예시 대화 7",
-      next: "second_choice"
+      next: "fifth_talk"
     },
-    second_choice: {
+    fifth_talk: {
+      type: "line", background: "cafe", portrait: "partner", speaker: "partner",
+      text: "예시 대화 8",
+      next: "fourth_choice"
+    },
+    fourth_choice: {
+      type: "choice", background: "cafe", portrait: "partner", speaker: null,
+      text: "",
+      options: [
+        { label: "A", affection: 2, next: "sixth_talk" },
+        { label: "B", affection: 1, next: "sixth_talk" },
+        { label: "C", affection: -1, next: "sixth_talk" },
+        { label: "D", affection: -2, next: "sixth_talk" }
+      ]
+    },
+    sixth_talk: {
+      type: "line", background: "cafe", portrait: "partner", speaker: "partner",
+      text: "예시 대화 9",
+      next: "seventh_talk"
+    },
+    seventh_talk: {
+      type: "line", background: "cafe", portrait: "partner", speaker: "partner",
+      text: "예시 대화 10",
+      next: "fifth_choice"
+    },
+    fifth_choice: {
+      type: "choice", background: "cafe", portrait: "partner", speaker: null,
+      text: "",
+      options: [
+        { label: "A", affection: 2, next: "eighth_talk" },
+        { label: "B", affection: 1, next: "eighth_talk" },
+        { label: "C", affection: -1, next: "eighth_talk" },
+        { label: "D", affection: -2, next: "eighth_talk" }
+      ]
+    },
+    eighth_talk: {
+      type: "line", background: "cafe", portrait: "partner", speaker: "partner",
+      text: "예시 대화 11",
+      next: "ninth_talk"
+    },
+    ninth_talk: {
+      type: "line", background: "cafe", portrait: "partner", speaker: "partner",
+      text: "예시 대화 12",
+      next: "sixth_choice"
+    },
+    sixth_choice: {
+      type: "choice", background: "cafe", portrait: "partner", speaker: null,
+      text: "",
+      options: [
+        { label: "A", affection: 2, next: "tenth_talk" },
+        { label: "B", affection: 1, next: "tenth_talk" },
+        { label: "C", affection: -1, next: "tenth_talk" },
+        { label: "D", affection: -2, next: "tenth_talk" }
+      ]
+    },
+    tenth_talk: {
+      type: "line", background: "cafe", portrait: "partner", speaker: "partner",
+      text: "예시 대화 13",
+      next: "eleventh_talk"
+    },
+    eleventh_talk: {
+      type: "line", background: "cafe", portrait: "partner", speaker: "partner",
+      text: "예시 대화 14",
+      next: "seventh_choice"
+    },
+    seventh_choice: {
       type: "choice", background: "cafe", portrait: "partner", speaker: null,
       text: "",
       options: [
