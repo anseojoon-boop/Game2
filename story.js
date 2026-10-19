@@ -1,87 +1,81 @@
-// 이야기를 고칠 때는 이 파일을 수정하세요. 쉼표와 따옴표는 그대로 유지해 주세요.
-// 이미지 이름(roof, mina 등)은 아래 assets에서 실제 파일 경로와 연결됩니다.
+// 대사와 선택지는 이 파일에서 수정하세요. 따옴표와 쉼표는 그대로 유지해 주세요.
+// 선택지 A~D의 실제 문장과 상대 이름은 추후 이곳에서 채울 수 있습니다.
 window.GAME_DATA = {
-  version: 1,
-  title: "옥상에서 만난 봄",
-  start: "opening",
+  version: 2,
+  title: "인관심 7조 과제",
+  start: "choose_gender",
   assets: {
-    backgrounds: {
-      roof: "assets/roof.svg",
-      library: "assets/library.svg"
-    },
-    characters: {
-      mina: "assets/mina.svg",
-      haneul: "assets/haneul.svg"
-    },
-    cgs: {
-      mina_memory: "assets/mina-memory.svg",
-      haneul_memory: "assets/haneul-memory.svg"
+    backgrounds: { cafe: "assets/cafe.svg" },
+    portraits: {
+      female: "assets/date-female.svg",
+      male: "assets/date-male.svg"
     }
   },
-  characters: {
-    mina: { name: "미나", color: "#ffb5c8" },
-    haneul: { name: "하늘", color: "#a5d9ff" }
+  playerGenders: {
+    male: { label: "남성", partner: "female" },
+    female: { label: "여성", partner: "male" }
   },
-  gallery: {
-    mina_memory: { title: "옥상의 약속", description: "미나와 함께한 봄날" },
-    haneul_memory: { title: "도서관의 오후", description: "하늘과 함께한 조용한 시간" }
+  partners: {
+    female: { name: "이름 미정", label: "여성", color: "#ffd5ba" },
+    male: { name: "이름 미정", label: "남성", color: "#c7ddff" }
   },
   nodes: {
-    opening: {
-      type: "line", background: "roof", portrait: null, speaker: null,
-      text: "새 학기가 시작된 첫날. 바람을 따라 학교 옥상에 올라왔다.", next: "mina_hello"
+    choose_gender: {
+      type: "gender", background: "cafe", portrait: null, speaker: null,
+      text: "소개팅을 시작하기 전에 본인의 성별을 선택하세요.",
+      options: [
+        { label: "남성", value: "male", next: "cafe_intro" },
+        { label: "여성", value: "female", next: "cafe_intro" }
+      ]
     },
-    mina_hello: {
-      type: "line", background: "roof", portrait: "mina", speaker: "mina",
-      text: "여기 있었네! 오늘 방과 후에 시간 있어?", next: "haneul_hello"
+    cafe_intro: {
+      type: "line", background: "cafe", portrait: null, speaker: null,
+      text: "약속 장소인 카페에 도착했다. 창가 자리에서 누군가 나를 기다리고 있다.",
+      next: "greeting"
     },
-    haneul_hello: {
-      type: "line", background: "roof", portrait: "haneul", speaker: "haneul",
-      text: "도서관에도 들러 줘. 보여 주고 싶은 책이 있어.", next: "first_choice"
+    greeting: {
+      type: "line", background: "cafe", portrait: "partner", speaker: "partner",
+      text: "안녕하세요. 오늘 소개팅하기로 한 분 맞으시죠?",
+      next: "first_question"
+    },
+    first_question: {
+      type: "line", background: "cafe", portrait: "partner", speaker: "partner",
+      text: "저도 조금 일찍 왔어요. 오시는 길은 괜찮으셨어요?",
+      next: "first_choice"
     },
     first_choice: {
-      type: "choice", background: "roof", portrait: null, speaker: null,
-      text: "오늘은 누구와 시간을 보낼까?",
+      type: "choice", background: "cafe", portrait: "partner", speaker: null,
+      text: "어떻게 대답할까?",
       options: [
-        { text: "미나와 옥상에 남는다", next: "mina_talk", affection: { mina: 1 } },
-        { text: "하늘과 도서관에 간다", next: "haneul_talk", affection: { haneul: 1 } }
+        { label: "A", affection: 2, next: "second_talk" },
+        { label: "B", affection: 1, next: "second_talk" },
+        { label: "C", affection: -1, next: "second_talk" },
+        { label: "D", affection: -2, next: "second_talk" }
       ]
     },
-    mina_talk: {
-      type: "line", background: "roof", portrait: "mina", speaker: "mina",
-      text: "와 줘서 고마워. 사실 같이 보고 싶은 풍경이 있거든.", next: "mina_choice"
+    second_talk: {
+      type: "line", background: "cafe", portrait: "partner", speaker: "partner",
+      text: "처음이라 조금 긴장되네요. 그래도 만나서 반가워요.",
+      next: "second_question"
     },
-    mina_choice: {
-      type: "choice", background: "roof", portrait: "mina", speaker: "mina",
-      text: "미나가 손을 내민다. 어떻게 할까?",
+    second_question: {
+      type: "line", background: "cafe", portrait: "partner", speaker: "partner",
+      text: "혹시 평소에는 어떤 곳에 가는 걸 좋아하세요?",
+      next: "second_choice"
+    },
+    second_choice: {
+      type: "choice", background: "cafe", portrait: "partner", speaker: null,
+      text: "어떻게 대답할까?",
       options: [
-        { text: "손을 잡고 함께 걷는다", next: "mina_ending", affection: { mina: 1 } },
-        { text: "다음에 보자고 말한다", next: "quiet_ending" }
+        { label: "A", affection: 2, next: "first_scene_end" },
+        { label: "B", affection: 1, next: "first_scene_end" },
+        { label: "C", affection: -1, next: "first_scene_end" },
+        { label: "D", affection: -2, next: "first_scene_end" }
       ]
     },
-    haneul_talk: {
-      type: "line", background: "library", portrait: "haneul", speaker: "haneul",
-      text: "이 책의 마지막 장면을 너와 함께 읽고 싶었어.", next: "haneul_choice"
-    },
-    haneul_choice: {
-      type: "choice", background: "library", portrait: "haneul", speaker: "haneul",
-      text: "하늘이 책을 펼친다. 어떻게 할까?",
-      options: [
-        { text: "옆에 앉아 함께 읽는다", next: "haneul_ending", affection: { haneul: 1 } },
-        { text: "다음에 읽자고 말한다", next: "quiet_ending" }
-      ]
-    },
-    mina_ending: {
-      type: "ending", background: "roof", portrait: "mina", speaker: "mina",
-      text: "내일도 여기서 만나자. 약속이야!", unlock: "mina_memory"
-    },
-    haneul_ending: {
-      type: "ending", background: "library", portrait: "haneul", speaker: "haneul",
-      text: "다음 책도 함께 읽을래?", unlock: "haneul_memory"
-    },
-    quiet_ending: {
-      type: "ending", background: "roof", portrait: null, speaker: null,
-      text: "오늘은 조용히 지나갔다. 내일은 다른 이야기가 시작될지도 모른다."
+    first_scene_end: {
+      type: "ending", background: "cafe", portrait: "partner", speaker: null,
+      text: "첫 만남이 끝났다. 이 만남은 어디로 이어질까?"
     }
   }
 };
