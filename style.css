@@ -7,7 +7,7 @@ button:focus-visible { outline: 3px solid #ffe3a9; outline-offset: 3px; }
 .scene { position: relative; width: 100%; min-height: min(100vh, 780px); height: min(64vw, 780px); overflow: hidden; isolation: isolate; background: #644b46; box-shadow: 0 24px 80px #0007; }
 .background { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -3; }
 .scene-shade { position: absolute; inset: 0; z-index: -2; pointer-events: none; background: linear-gradient(180deg, #1d182688 0%, transparent 24%, transparent 48%, #18131a88 100%); }
-.portrait { position: absolute; bottom: 120px; left: 50%; transform: translateX(-50%); height: min(78%, 630px); max-width: 70%; object-fit: contain; object-position: bottom; z-index: -1; filter: drop-shadow(0 18px 22px #28213b66); }
+.portrait { position: absolute; bottom: 160px; left: 50%; transform: translateX(-50%); height: min(62%, 490px); max-width: 55%; object-fit: contain; object-position: bottom; z-index: -1; filter: drop-shadow(0 18px 22px #28213b66); }
 .portrait[hidden], .background[hidden], .next[hidden] { display: none; }
 .topbar { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 30px 36px; }
 .brand { font-size: 17px; font-weight: 700; letter-spacing: -.04em; text-shadow: 0 2px 10px #0009; }
@@ -39,7 +39,7 @@ button:focus-visible { outline: 3px solid #ffe3a9; outline-offset: 3px; }
   .brand { font-size: 14px; }
   .brand small { font-size: 8px; }
   .hud { top: 73px; right: 17px; }
-  .portrait { height: 60%; max-width: 100%; bottom: 170px; }
+  .portrait { height: 52%; max-width: 85%; bottom: 184px; }
   .dialogue { bottom: 12px; left: 12px; width: calc(100% - 24px); min-height: 188px; padding: 18px; }
   .line { font-size: 16px; }
 }

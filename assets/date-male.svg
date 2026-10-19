@@ -1,18 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 650">
-  <defs><linearGradient id="hair" x2="1" y2="1"><stop stop-color="#51434a"/><stop offset="1" stop-color="#2b2833"/></linearGradient><linearGradient id="jacket" x2="1" y2="1"><stop stop-color="#748195"/><stop offset="1" stop-color="#3f5168"/></linearGradient></defs>
-  <ellipse cx="214" cy="632" rx="151" ry="15" fill="#261e28" opacity=".3"/>
-  <path d="M153 320q-80 12-98 128L27 631h376l-29-183q-17-116-100-128Z" fill="url(#jacket)" stroke="#36465c" stroke-width="5"/>
-  <path d="M171 309h85v81q-44 41-85 0Z" fill="#e9c0ab"/>
-  <path d="M162 345q19 99 54 156 35-64 55-156l-55 39Z" fill="#f7f0e7"/>
-  <path d="M201 390h30l-5 75-11 42-10-42Z" fill="#825f65"/>
-  <path d="M159 328 216 389l-51 80-39-85M273 328l-57 61 51 80 40-85" fill="#60748d" stroke="#40536a" stroke-width="4"/>
-  <path d="M129 510q83 31 174 0l27 121H100Z" fill="#35465b"/>
-  <path d="M124 458q-29 73-42 149l81 14 27-135m114-28q30 74 43 149l-83 14-23-135" fill="#657a94" stroke="#40536a" stroke-width="4"/>
-  <ellipse cx="215" cy="210" rx="90" ry="112" fill="#efc9b2"/>
-  <path d="M124 192q-20-125 77-141 114-16 132 92l-6 78q-15-44-36-69-68 32-167 40Z" fill="url(#hair)"/>
-  <path d="M130 176q-14 70 2 106l19-11q-15-53 0-93M320 163q22 62 4 111l-21-8q10-50-7-97" fill="url(#hair)"/>
-  <path d="M151 218q20-9 40 0m46 0q20-9 41 0" fill="none" stroke="#514349" stroke-width="5" stroke-linecap="round"/>
-  <circle cx="177" cy="225" r="6" fill="#383540"/><circle cx="255" cy="225" r="6" fill="#383540"/>
-  <path d="M201 282q16 10 30 0" fill="none" stroke="#ad7775" stroke-width="4" stroke-linecap="round"/>
-  <path d="M147 370q18 16 38 12m96-12q-18 16-38 12" fill="none" stroke="#8e9ca9" stroke-width="4"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 650" role="img" aria-label="남성 상대 임시 픽토그램">
+  <circle cx="215" cy="295" r="170" fill="#557387" fill-opacity=".88" stroke="#e6edf0" stroke-width="7"/>
+  <circle cx="215" cy="243" r="66" fill="#f5f7f6"/>
+  <path d="M151 223q0-62 64-62t64 62q-23-18-64-18t-64 18Z" fill="#394b59"/>
+  <path d="M215 348c-80 0-120 50-120 133v18h240v-18c0-83-40-133-120-133Z" fill="#f5f7f6"/>
+  <path d="M181 348l34 48 34-48" fill="#c5d2d7"/>
 </svg>

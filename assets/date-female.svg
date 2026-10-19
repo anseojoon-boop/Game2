@@ -1,20 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 650">
-  <defs><linearGradient id="hair" x2="1" y2="1"><stop stop-color="#614548"/><stop offset="1" stop-color="#352c3b"/></linearGradient><linearGradient id="jacket" x2="1" y2="1"><stop stop-color="#d7a5a0"/><stop offset="1" stop-color="#a67986"/></linearGradient></defs>
-  <ellipse cx="211" cy="632" rx="152" ry="15" fill="#261e28" opacity=".3"/>
-  <path d="M111 170q-8-128 101-137 121-9 130 127l5 252-61 55-152-34-38-81Z" fill="url(#hair)"/>
-  <path d="M159 326q-74 13-96 119L29 631h373l-35-186q-19-102-96-119Z" fill="url(#jacket)" stroke="#8e6977" stroke-width="5"/>
-  <path d="M172 315h82v78q-40 44-82 0Z" fill="#efc7b2"/>
-  <path d="M166 355q24 89 50 143 27-54 50-143l-50 32Z" fill="#faf3e9"/>
-  <path d="M161 336 216 391l-53 76-37-91M271 336l-55 55 53 76 36-91" fill="#c78e91" stroke="#976f7c" stroke-width="3"/>
-  <path d="M133 508q82 30 166 0l24 123H107Z" fill="#684d60"/>
-  <path d="M122 468q-30 63-41 141l76 11 30-121m124-31q31 66 39 141l-79 11-26-121" fill="#c39094" stroke="#976d7d" stroke-width="4"/>
-  <path d="M134 582q-3-60 62-60h62q62 2 57 60l-17 49H151Z" fill="#634851" stroke="#9d7472" stroke-width="5"/>
-  <ellipse cx="215" cy="216" rx="89" ry="116" fill="#f4cfb9"/>
-  <path d="M124 215q-15-140 78-159 111-20 129 99l-12 96q-28-70-48-96-63 39-145 46Z" fill="url(#hair)"/>
-  <path d="M129 165q-41 100-7 221l30-26q-26-94 2-176M309 161q35 88-6 219l-31-23q25-101 7-181" fill="url(#hair)"/>
-  <path d="M158 223q17-10 35 0m44 0q18-10 36 0" fill="none" stroke="#61474e" stroke-width="5" stroke-linecap="round"/>
-  <circle cx="179" cy="229" r="6" fill="#4e353f"/><circle cx="254" cy="229" r="6" fill="#4e353f"/>
-  <path d="M202 285q14 12 29 0" fill="none" stroke="#b77878" stroke-width="4" stroke-linecap="round"/>
-  <ellipse cx="152" cy="265" rx="17" ry="7" fill="#dd8b91" opacity=".35"/><ellipse cx="279" cy="265" rx="17" ry="7" fill="#dd8b91" opacity=".35"/>
-  <circle cx="119" cy="235" r="8" fill="#edc28e"/><circle cx="308" cy="235" r="8" fill="#edc28e"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 650" role="img" aria-label="여성 상대 임시 픽토그램">
+  <circle cx="215" cy="295" r="170" fill="#936774" fill-opacity=".88" stroke="#f7e8df" stroke-width="7"/>
+  <path d="M129 239q0-91 86-91t86 91v94H129Z" fill="#543c49"/>
+  <circle cx="215" cy="243" r="66" fill="#fff5ed"/>
+  <path d="M149 222q4-65 66-65t66 65q-31-21-66-21t-66 21Z" fill="#543c49"/>
+  <path d="M215 348c-80 0-120 50-120 133v18h240v-18c0-83-40-133-120-133Z" fill="#fff5ed"/>
+  <path d="M181 348l34 48 34-48" fill="#dfc0b9"/>
 </svg>

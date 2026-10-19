@@ -18,7 +18,7 @@
 4. 선택지 문장을 정하면 `first_choice`와 `second_choice`의 `label: "A"` 같은 부분을 문장으로 바꿉니다. 호감도 점수는 같은 줄의 `affection` 숫자로 바꿀 수 있습니다. 양수는 상승, 음수는 하락입니다.
 5. GitHub의 **Commit changes**를 누르면 변경 내용이 저장소에 반영됩니다. 따옴표, 쉼표, 중괄호는 그대로 두세요.
 
-그림을 교체하려면 `assets` 폴더에 이미지 파일을 올리고, `story.js` 맨 위의 `assets`에서 파일 경로를 바꿉니다. PNG·JPG·SVG를 사용할 수 있습니다. 화면 색과 크기는 `style.css`, 진행 기능은 `game.js`에 있습니다.
+현재 상대 그림은 성별을 구분하는 임시 픽토그램입니다. 실제 그림으로 교체하려면 `assets` 폴더에 이미지 파일을 올리고, `story.js` 맨 위의 `assets`에서 파일 경로를 바꿉니다. PNG·JPG·SVG를 사용할 수 있습니다. 화면 색과 크기는 `style.css`, 진행 기능은 `game.js`에 있습니다.
 
 파일을 직접 실행하려면 `index.html`을 브라우저에서 엽니다. 브라우저가 로컬 파일 열기를 막는 경우 이 폴더에서 `python3 -m http.server 8000`을 실행하고 `http://localhost:8000`을 엽니다.
 
