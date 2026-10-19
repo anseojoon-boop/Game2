@@ -17,7 +17,7 @@
         <div class="topbar">
           <div class="brand"><span class="brand-mark">✦</span> 인관심 7조 과제 <small>첫 만남 · 카페</small></div>
         </div>
-        <div class="hud" id="affection" role="meter" aria-label="호감도" aria-valuemin="-4" aria-valuemax="4" aria-valuenow="0" hidden>
+        <div class="hud" id="affection" role="meter" aria-label="호감도" aria-valuemin="-10" aria-valuemax="10" aria-valuenow="0" hidden>
           <img class="affection-heart" src="assets/affection-heart.png" alt="">
           <div class="affection-content">
             <div class="affection-head"><span id="partner-label"></span><strong id="affection-value">0</strong></div>
@@ -26,6 +26,7 @@
               <span class="gauge-fill gauge-positive" id="affection-positive"></span>
               <img class="gauge-frame" src="assets/affection-gauge.svg" alt="">
             </div>
+            <div class="gauge-labels" aria-hidden="true"><span>−10</span><span>0</span><span>+10</span></div>
           </div>
         </div>
         <section class="dialogue" aria-live="polite">

@@ -80,7 +80,8 @@
             state.affection = 0;
             enter(option.next);
           } else {
-            state.affection += option.affection;
+            state.affection = Math.max(data.affectionGauge.min,
+              Math.min(data.affectionGauge.max, state.affection + option.affection));
             enter(option.next);
             notify(`호감도 ${option.affection > 0 ? "+" : ""}${option.affection} · 현재 ${state.affection}`);
           }

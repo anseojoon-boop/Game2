@@ -3,7 +3,7 @@
 window.GAME_DATA = {
   version: 2,
   title: "인관심 7조 과제",
-  affectionGauge: { min: -4, max: 4 },
+  affectionGauge: { min: -10, max: 10 },
   start: "choose_gender",
   assets: {
     backgrounds: { cafe: "assets/concepts/cafe-day.png" },
