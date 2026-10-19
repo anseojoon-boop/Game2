@@ -4,7 +4,7 @@
 
 ## 플레이 방법
 
-웹 미리보기(현재 버전 고정): https://raw.githack.com/anseojoon-boop/Game2/d154f9220673504d897962b5c19f417300afb83f/index.html
+웹 미리보기(현재 버전 고정): https://raw.githack.com/anseojoon-boop/Game2/ba67113f82a13d17aa53aa8cb8d3a706d7e8a321/index.html
 
 `main`을 사용하는 미리보기 주소는 중간 서비스의 캐시 때문에 예전 화면이 나올 수 있습니다. 위 주소는 카페 첫 소개팅 장면이 들어 있는 커밋을 직접 가리킵니다. 이후 게임 내용을 수정하면 새 커밋 주소로 바꾸거나 아래 GitHub Pages 주소를 사용하세요.
 
