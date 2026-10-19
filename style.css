@@ -29,7 +29,7 @@ button:focus-visible { outline: 3px solid #ffe3a9; outline-offset: 3px; }
 .dialogue { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); width: min(92%, 960px); min-height: 205px; padding: 23px 28px 18px; border: 1px solid #ffffff7a; border-radius: 18px; background: #241d26bd; box-shadow: 0 12px 45px #0c0d20a6; backdrop-filter: blur(2px); }
 .dialogue[hidden] { display: none; }
 .speaker { font-size: 15px; font-weight: 700; }
-.line { margin: 12px 0 14px; min-height: 45px; font-size: clamp(16px, 1.6vw, 21px); line-height: 1.6; word-break: keep-all; }
+.line { margin: 12px 0 14px; min-height: 45px; font-size: clamp(16px, 1.6vw, 21px); line-height: 1.6; white-space: pre-line; word-break: keep-all; }
 .choices { display: flex; flex-direction: column; gap: 8px; margin: 3px 0 14px; }
 .choices.gender-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .choices.letter-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 0; }
@@ -56,6 +56,14 @@ button:focus-visible { outline: 3px solid #ffe3a9; outline-offset: 3px; }
 .title-menu button { min-height: 53px; border: 1px solid #ffead4; border-radius: 13px; background: #563940e8; color: #fff8ef; box-shadow: 0 7px 20px #5732364d; font-size: 17px; font-weight: 700; }
 .title-menu button:hover { background: #80515c; }
 .title-status { min-height: 1.5em; margin: 14px 0 0; font-size: 13px; font-weight: 700; }
+.game-over { position: absolute; inset: 0; z-index: 6; display: grid; place-items: center; padding: 24px; background: #201820d9; backdrop-filter: blur(6px); }
+.game-over[hidden] { display: none; }
+.game-over-card { width: min(100%, 480px); padding: 42px 28px; border: 1px solid #f0c7ca88; border-radius: 22px; background: #3b2932ed; box-shadow: 0 20px 70px #110d14a6; text-align: center; }
+.game-over-mark { display: block; color: #e7a4a9; font-size: 47px; line-height: 1; }
+.game-over h2 { margin: 12px 0 16px; color: #ffe3df; font-size: clamp(31px, 4vw, 48px); }
+.game-over p { margin: 0 0 28px; color: #f6d8d5; font-size: 17px; line-height: 1.6; }
+.game-over button { min-width: 180px; padding: 13px 22px; border: 1px solid #ffe7d9; border-radius: 11px; background: #81535f; color: white; font-weight: 700; }
+.game-over button:hover { background: #a66a76; }
 @media (max-width: 650px) {
   .scene { height: 100dvh; min-height: 580px; }
   .background { object-position: 25% center; }

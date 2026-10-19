@@ -9,6 +9,8 @@
     dialogue: $("dialogue"),
     title: $("title-screen"), titleBackground: $("title-background"),
     titleStatus: $("title-status"),
+    gameOver: $("game-over"), gameOverTitle: $("game-over-title"),
+    gameOverText: $("game-over-text"),
     speaker: $("speaker"), line: $("line"), choices: $("choices"),
     affection: $("affection"), partnerLabel: $("partner-label"),
     affectionValue: $("affection-value"), positive: $("affection-positive"),
@@ -48,6 +50,22 @@
     element.hidden = false;
   }
 
+  function showGameOver() {
+    ui.gameOverTitle.textContent = data.gameOver.title;
+    ui.gameOverText.textContent = data.gameOver.text;
+    ui.dialogue.hidden = true;
+    ui.gameOver.hidden = false;
+    $("game-over-menu-button").focus();
+  }
+
+  function showTitle() {
+    ui.gameOver.hidden = true;
+    ui.dialogue.hidden = true;
+    ui.titleStatus.textContent = "";
+    ui.title.hidden = false;
+    $("title-start-button").focus();
+  }
+
   function render() {
     const node = data.nodes[state.node];
     const date = partner();
@@ -57,7 +75,10 @@
       date ? date.label + " 소개팅 상대" : "");
     ui.speaker.textContent = node.speaker === "partner" ? date.name : "이야기";
     ui.speaker.style.color = node.speaker === "partner" ? date.color : "#f6dfaa";
-    ui.line.textContent = node.text;
+    const nextScene = node.type === "ending" ? node.nextScene : null;
+    ui.line.textContent = nextScene
+      ? `${node.text}\n${state.affection >= nextScene.minAffection ? nextScene.readyText : nextScene.lockedText}`
+      : node.text;
     ui.dialogue.classList.toggle("choice-mode", node.type === "choice");
     ui.affection.hidden = !date;
     if (date) {
@@ -87,6 +108,10 @@
             state.affection = Math.max(data.affectionGauge.min,
               Math.min(data.affectionGauge.max, state.affection + option.affection));
             enter(option.next);
+            if (state.affection <= data.gameOver.threshold) {
+              showGameOver();
+              return;
+            }
             notify(`호감도 ${option.affection > 0 ? "+" : ""}${option.affection} · 현재 ${state.affection}`);
           }
         });
@@ -149,6 +174,10 @@
     ui.title.hidden = true;
     ui.dialogue.hidden = false;
     render();
+    if (state.affection <= data.gameOver.threshold) {
+      showGameOver();
+      return;
+    }
     notify("저장한 장면을 불러왔어요.");
   }
 
@@ -163,19 +192,15 @@
   ui.next.addEventListener("click", advance);
   $("save-button").addEventListener("click", save);
   $("load-button").addEventListener("click", () => load());
-  $("menu-button").addEventListener("click", () => {
-    ui.titleStatus.textContent = "";
-    ui.dialogue.hidden = true;
-    ui.title.hidden = false;
-    $("title-start-button").focus();
-  });
+  $("menu-button").addEventListener("click", showTitle);
+  $("game-over-menu-button").addEventListener("click", showTitle);
   ui.scene.addEventListener("click", (event) => {
-    if (!ui.title.hidden) return;
+    if (!ui.title.hidden || !ui.gameOver.hidden) return;
     if (event.target.closest("button, .dialogue, .topbar, .hud")) return;
     advance();
   });
   document.addEventListener("keydown", (event) => {
-    if (!ui.title.hidden) return;
+    if (!ui.title.hidden || !ui.gameOver.hidden) return;
     if (event.key === "Enter" && event.target.tagName !== "BUTTON") advance();
   });
   showImage(ui.titleBackground, data.assets.title, "");

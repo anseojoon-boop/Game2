@@ -4,6 +4,11 @@ window.GAME_DATA = {
   version: 2,
   title: "인관심 7조 과제",
   affectionGauge: { min: -10, max: 10 },
+  gameOver: {
+    threshold: -8,
+    title: "게임 오버",
+    text: "호감도가 -8 이하가 되었습니다."
+  },
   start: "choose_gender",
   assets: {
     title: "assets/title-cafe.png",
@@ -172,7 +177,12 @@ window.GAME_DATA = {
     },
     first_scene_end: {
       type: "ending", background: "cafe", portrait: "partner", speaker: null,
-      text: "첫 번째 장면 끝"
+      text: "첫 번째 장면 종료",
+      nextScene: {
+        minAffection: 8,
+        readyText: "호감도 8 이상 달성! 다음 장면으로 넘어가는 기능은 추후 구현 예정입니다.",
+        lockedText: "호감도가 8 이상이면 다음 장면으로 넘어가는 기능은 추후 구현 예정입니다."
+      }
     }
   }
 };
