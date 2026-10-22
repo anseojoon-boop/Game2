@@ -37,7 +37,7 @@ window.GAME_DATA = {
     },
     cafe_intro: {
       type: "line", background: "cafe", portrait: "partner", speaker: null,
-      text: "예시 대화 1",
+      text: "예시 대화 1.",
       next: "greeting"
     },
     greeting: {
